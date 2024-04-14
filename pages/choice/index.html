@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="../../commonCss/mode1.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="action">
+      <div class="profile" onclick=" menuToggle()">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGU75F10hHYzumh3r2HkDve9wTh2GLZ57ENYSMl4G5SC3lKc_3ZuZmnzC-RfYJoxThvMA&usqp=CAU"
+          id="headerdp" />
+      </div>
+      <div class="menu1">
+        <ul class="ul-1">
+          <li class="li-1">
+            <img id="menudp"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGU75F10hHYzumh3r2HkDve9wTh2GLZ57ENYSMl4G5SC3lKc_3ZuZmnzC-RfYJoxThvMA&usqp=CAU"
+              class="profile" />&nbsp;&nbsp;&nbsp;
+            <div>
+              <p id="menuusername">User Name</p>
+            </div>
+          </li>
+
+          <li class="li-1">
+            <i class="ri-user-line icon-1"></i><a href="../profile1/">My Profile</a>
+          </li>
+          <li class="li-1">
+            <i class="ri-mail-line icon-1"></i><a href="../inbox/">Inbox</a>
+          </li>
+          <li class="li-1">
+            <i class="ri-settings-2-line icon-1"></i><a href="../about-us">Setting</a>
+          </li>
+          <li class="li-1">
+            <i class="ri-question-line icon-1"></i><a href="../help/">Help</a>
+          </li>
+          <li class="li-1">
+            <i class="ri-logout-box-line icon-1"></i><a href="#" onclick="logout()">LogOut</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <header class="dark-mode" style="z-index: 10">
+      <input type="checkbox" id="toogle-mode" class="checkbox" />
+      <label class="up" for="toogle-mode">
+        <i class="fa fa-moon-o"></i>
+        <i class="fa fa-sun-o"></i>
+        <div class="circle"></div>
+      </label>
+    </header>
+  </div>
+  </div>
+  </div>
+
+  <h1>Select the Best Choice of Flipboard</h1>
+  <div class="container">
+    <div class="top_container">
+      <div id="left">
+        <h3>Dressing</h3>
+      </div>
+      <div id="right">
+        <h3 class="photo">Photography</h3>
+      </div>
+      <div id="middle">
+        <h3>Beauty</h3>
+      </div>
+    </div>
+
+    <div class="bottom_container">
+      <div id="box1">
+        <h5>Photography</h5>
+      </div>
+      <div id="box2">
+        <h5>Wedding</h5>
+      </div>
+      <div id="box3">
+        <h5>Beauty</h5>
+      </div>
+      <div id="box4">
+        <h5>Dressing</h5>
+      </div>
+      <div id="box5">
+        <h5>Dressing</h5>
+      </div>
+      <div id="box6">
+        <h5>Beauty</h5>
+      </div>
+      <div id="box7">
+        <h5>Photography</h5>
+      </div>
+      <div id="box8">
+        <h5>Hairs-Style</h5>
+      </div>
+      <div id="box9">
+        <h5>Modelling</h5>
+      </div>
+      <div id="box10">
+        <h5>Beauty</h5>
+      </div>
+    </div>
+
+    <button>Load More</button>
+    <p class="msg"></p>
+
+    <div class="load_image">
+      <div id="box_mid1">
+        <div class="box" id="photo">
+          <img
+            src="https://images.unsplash.com/photo-1683009427500-71296178737f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8" />
+          <h4>Scneery</h4>
+        </div>
+        <div class="box" id="beauty">
+          <img
+            src="https://media.istockphoto.com/id/1324844508/photo/gorgeous-woman-wearing-beautiful-maxi-dress-posing-against-wall-with-a-wild-grape.webp?b=1&s=170667a&w=0&k=20&c=e8QIDlkmTS4UZ91ZTSS2pEQrzN79G0jqI6BimNtv0RA=" />
+          <h4>Dressing</h4>
+        </div>
+        <div class="box" id="Dressing">
+          <img
+            src="https://images.unsplash.com/photo-1596783047904-4000addd05cd?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+          <h4>Dressing</h4>
+        </div>
+        <div class="box" id="Hairstyle">
+          <img
+            src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGhhaXIlMjBjYXJlfGVufDB8fDB8fHww" />
+          <h4>Hairstyle</h4>
+        </div>
+        <div class="box" id="hairs">
+          <img
+            src="https://images.unsplash.com/photo-1583331030595-6601e6c7b5d5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGhhaXIlMjBjYXJlfGVufDB8fDB8fHww" />
+          <h4>Hairs</h4>
+        </div>
+        <div class="box" id="Photography">
+          <img
+            src="https://images.unsplash.com/photo-1596783074918-c84cb06531ca?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZHJlc3Nlc3xlbnwwfHwwfHx8MA%3D%3D" />
+          <h4>Dresses</h4>
+        </div>
+
+        <div class="box" id="Beauty">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1677098575994-400ea6e05303?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aGFpciUyMGNhcmV8ZW58MHx8MHx8fDA%3D" />
+          <h4>Beauty</h4>
+        </div>
+        <div class="box" id="Photography">
+          <img
+            src="https://images.unsplash.com/photo-1602810320073-1230c46d89d4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGRyZXNzZXMlMjBtZW5zfGVufDB8fDB8fHww" />
+          <h4>Photography</h4>
+        </div>
+        <div class="box" id="mens">
+          <img
+            src="https://images.unsplash.com/photo-1549236177-77e8271c34b6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFpcnN0eWxlfGVufDB8fDB8fHww" />
+          <h4>Hairstyle</h4>
+        </div>
+        <div class="box" id="Womens">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1668383207771-dcf6e2d520f5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGhvdG9ncmFwaHl8ZW58MHx8MHx8fDA%3D" />
+          <h4>Womens</h4>
+        </div>
+        <div class="box">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1664301671693-54d2a96b2d75?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fGJlYXV0aWZ1bCUyMGJvZHl8ZW58MHx8MHx8fDA%3D" />
+          <h4>Photography</h4>
+        </div>
+        <div class="box">
+          <img
+            src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aGFpcnN0eWxlfGVufDB8fDB8fHww" />
+          <h4>Beauty</h4>
+        </div>
+
+        <div class="box">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1669850858880-d88baa3d24d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGhvdG9ncmFwaHl8ZW58MHx8MHx8fDA%3D" />
+          <h4>Mens</h4>
+        </div>
+        <div class="box">
+          <img
+            src="https://images.unsplash.com/photo-1578390432942-d323db577792?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhhaXJzdHlsZSUyMG1lbnN8ZW58MHx8MHx8fDA%3D" />
+          <h4>Haircut</h4>
+        </div>
+        <div class="box">
+          <img
+            src="https://images.unsplash.com/photo-1620895564776-26a51bfb9273?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YmVhY2glMjBwaG90b2dyYXBoeXxlbnwwfHwwfHx8MA%3D%3D" />
+          <h4>Photography</h4>
+        </div>
+        <div class="box">
+          <img
+            src="https://media.istockphoto.com/id/1774053926/photo/happy-indian-family-of-three-enjoying-summer-vacation-man-and-woman-holding-hands-of-their.webp?b=1&s=170667a&w=0&k=20&c=M3sY2TZ9MwK2VGIumrQJlPRsiOAZR7WJSY-rtgiV0ro=" />
+          <h4>Family</h4>
+        </div>
+        <div class="box">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1664478113514-0c6846b8eb2b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDl8fGJlYXV0aWZ1bCUyMGJvZHl8ZW58MHx8MHx8fDA%3D" />
+          <h4>Poses</h4>
+        </div>
+        <div class="box">
+          <img
+            src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+          <h4>Makeup</h4>
+        </div>
+
+        <div class="box">
+          <img
+            src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJlYXV0eXxlbnwwfHwwfHx8MA%3D%3D" />
+          <h4>Makeup</h4>
+        </div>
+        <div class="box">
+          <img
+            src="https://images.unsplash.com/photo-1622842182823-28bfbfba47e3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fHBob3RvZ3JhcGh5fGVufDB8fDB8fHww" />
+          <h4>Photography</h4>
+        </div>
+        <div class="box">
+          <img
+            src="https://images.unsplash.com/photo-1563469004801-2eded8dcfb95?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1vZGVscyUyMHBvc2V8ZW58MHx8MHx8fDA%3D" />
+          <h4>Looks</h4>
+        </div>
+        <div class="box">
+          <img
+            src="https://images.unsplash.com/photo-1568252748074-f9c8d964e834?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fG1vZGVscyUyMHBvc2V8ZW58MHx8MHx8fDA%3D" />
+          <h4>Style</h4>
+        </div>
+        <div class="box">
+          <img
+            src="https://images.unsplash.com/photo-1525772764200-be829a350797?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fHdlZGRpbmd8ZW58MHx8MHx8fDA%3D" />
+          <h4>Wedding</h4>
+        </div>
+        <div class="box">
+          <img
+            src="https://images.unsplash.com/photo-1525772764200-be829a350797?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fHdlZGRpbmd8ZW58MHx8MHx8fDA%3D" />
+          <h4>Wedding</h4>
+        </div>
+
+        <div class="box">
+          <img
+            src="https://images.unsplash.com/photo-1611826585949-b0ccabd2c1a4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1ha2V1cHxlbnwwfHwwfHx8MA%3D%3D" />
+          <h4>Makeup</h4>
+        </div>
+        <div class="box">
+          <img
+            src="https://images.unsplash.com/photo-1560869713-bf165a9cfac1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJlYXV0eSUyMGhhaXJzfGVufDB8fDB8fHww" />
+          <h4>Hairs</h4>
+        </div>
+        <div class="box">
+          <img
+            src="https://images.unsplash.com/photo-1546032996-6dfacbacbf3f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdlZGRpbmd8ZW58MHx8MHx8fDA%3D" />
+          <h4>Couples</h4>
+        </div>
+        <div class="box">
+          <img
+            src="https://images.unsplash.com/photo-1627913759066-2f62eb9bbaa4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGluZGlhbiUyMHdlZGRpbmclMjBwaG90b2dyYXBoeXxlbnwwfHwwfHx8MA%3D%3D" />
+          <h4>Couples</h4>
+        </div>
+        <div class="box">
+          <img
+            src="https://images.unsplash.com/photo-1610047520958-b42ebcd2f6cb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aW5kaWFuJTIwd2VkZGluZyUyMHBob3RvZ3JhcGh5fGVufDB8fDB8fHww" />
+          <h4>Look</h4>
+        </div>
+        <div class="box">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1664453547054-f5556bfa9883?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fG1vZGVscyUyMHBvc2V8ZW58MHx8MHx8fDA%3D" />
+          <h4>style</h4>
+        </div>
+      </div>
+    </div>
+
+    <p class="msg1"></p>
+    <button id="activateButton" onclick="submitAndChangeColor()">
+      Activate and Submit
+    </button>
+  </div>
+
+  <script>
+    function menuToggle() {
+      const toggleMenu = document.querySelector(".menu1");
+      toggleMenu.classList.toggle("active");
+    }
+  </script>
+  <script src="../../commonJs/firebase.js">
+  </script>
+  <script src="../../commonJs/nav.js"></script>
+  <script src="./main.js"></script>
+  <script src="../../commonJs/mode.js"></script>
+
+</body>
+
+</html>

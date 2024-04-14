@@ -1,0 +1,119 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: aliceblue;
+}
+.forget-1 {
+  background: rgb(121, 120, 120);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  width: 410px;
+  padding: 15px;
+  margin-right: 20px;
+  min-width: 410px;
+  min-width: 200px;
+}
+
+.forget-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 12px;
+}
+.forget-3 {
+  margin-bottom: 15px;
+}
+/* input {
+    outline: none;
+    border: 1px solid #d0d6db;
+    width: 94%;
+    font-weight: 200 !important;
+    border-radius: 5px;
+    height: 30px;
+    padding-left: 10px;
+  }
+  input::placeholder {
+    color: #9da6ae !important;
+  }
+  .input {
+    margin-left: 5px;
+    margin-top: 5px;
+  } */
+
+fieldset {
+  border: none;
+  text-align: left;
+  position: relative;
+  padding: 0 0 16px 0;
+  margin-top: 20px;
+}
+fieldset label {
+  color: #000;
+  font-size: 20px;
+}
+input {
+  display: block;
+  width: 400px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  border-radius: 32px;
+  margin: 6px 0 0 0;
+  outline: none;
+  text-indent: 15px;
+  font-size: 14px;
+  color: #000;
+}
+::placeholder {
+  color: rgba(59, 59, 59, 1);
+}
+input:active,
+input:focus {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.forget-4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+.paral {
+  margin-bottom: 15px;
+  margin-top: 20px;
+  font-style: 15px;
+}
+.forget-5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+span {
+  font-weight: bold;
+}
+#back {
+  cursor: pointer;
+  color: #3360f8;
+}
+#forgetbtn {
+  width: 50%;
+  border-radius: 20px;
+  margin-left: 6px;
+  background-color: #3360f8;
+  color: white;
+  border: none;
+  height: 35px;
+  cursor: pointer;
+  left: 50%;
+}

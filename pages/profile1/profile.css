@@ -1,0 +1,310 @@
+:root {
+  --primary-bgcolor: #000;
+  --primary-txtcolor: #fff;
+}
+
+.light {
+  --primary-bgcolor: #fff;
+  --primary-txtcolor: #000;
+}
+
+  .card1 {
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 30px;
+    /* padding: 10px; */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    height: 680px;
+    background: #12c2e9;  
+    background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);  
+    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+    margin-left: 17%;
+    margin-top: 80px;
+}
+
+  .left-container {
+    /* background: #000000; 
+    background: -webkit-linear-gradient(to right, #434343, #000000);
+    background: linear-gradient(to right, #434343, #000000);  */
+    background-color: #080710ca;
+    flex: 1;
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:620px;
+    padding: 10px;
+    margin: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .right-container {
+    /* background: #000000; 
+    background: -webkit-linear-gradient(to left, #434343, #000000);
+    background: linear-gradient(to left, #434343, #000000);  */
+    background-color: #080710ca;
+    flex: 1;
+    max-width:80%;
+    height:620px;
+    padding: 10px;
+    margin: 20px;
+    border-radius:30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  @media only screen and (max-width: 860px) {
+    .card
+     {
+     flex-direction: column;
+     margin: 10px;
+     height: auto;
+     width: 90%;
+    }
+    .left-container{
+        flex: 1;
+        max-width:100%; 
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .card
+     {
+     flex-direction: column;
+     margin: 10px;
+    }
+    .left-container{
+        flex: 1;
+        max-width:100%; 
+    }
+  }
+  h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  .gradienttext{
+    font-size: 28px;
+    color: #0491b1;
+    text-align: center;
+    /* -webkit-background-clip: text; */
+  }
+  p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    /* color:aliceblue */
+    
+  }
+  
+
+  #usercoverpicture{
+    position: relative;
+    left: 12%;
+    margin-top: 20px;
+    width: 300px;
+}
+
+#choosecoverimg {
+    position: absolute;
+     right: 20%; 
+     bottom: 35px; 
+}
+#m {
+    border-radius: 100px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+/* #usercoverimg {
+    /* border-top-right-radius: 10px;
+    border-top-left-radius: 10px; */
+   /*  width: 350px;
+    max-height: 40vh;
+    
+  } */
+#userprofilepicture {
+    position: absolute;
+    top: 20%;
+    left: 7%;
+}
+  #userprofileimg {
+    border-radius: 100px;
+    height: 100px;
+    width: 100px;
+    margin-bottom: 10px;
+}
+  #chooseprofileimg {
+    position: absolute;
+    bottom: 45%;
+    left: 70px;
+}
+#progressbardiv {
+    border-radius: 10px;
+    visibility: hidden;
+    margin-top: 3px;
+    margin-bottom: 4px;
+  }
+.buttons{
+    display: flex;
+    gap: 5px;
+    margin-top: 40px;
+}
+
+  button{
+    border: none;
+    background: #f64f59;
+    width: 130px;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 20px;
+  
+  }
+  button:hover{
+    border: none;
+    background: #e98e95;
+  }
+  .blocks{
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  .postA{
+    width: 100%;
+    height: auto;
+    /* background: green; */
+    display: block;
+  }
+  .updateB{
+    width: 100%;
+    height: auto;
+    /* background: red; */
+    display: none;
+  }
+
+  /*form section*/
+
+  input {
+    outline: none;
+  }
+  #a {
+    background-color: #f0f2f5;
+    width: 105%;
+    font-size: 15px;
+    height: 80%;
+    outline: none !important;
+    border: none;
+    margin: 0px;
+    padding: 15px;
+    padding-left: 20px;
+    border-radius: 20px;
+    margin-right: 10px;
+  }
+  #editabledatadiv {
+    margin: 0px;
+  }
+  
+  #userprofileandpostsdiv {
+    padding: 0px 20px;
+  }
+  /* .usersdetailsbuttons {
+    color: blue;
+    width: 50%;
+    padding: 5px 23px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+  } */
+  #navpromain {
+    width: 100%;
+    display: flex;
+    align-items: center !important;
+    justify-content: center;
+  }
+  /* #editabledatadiv {
+    background-color: white !important;
+  } */
+  .buttons {
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
+  }
+  #editabledatadiv {
+    width: 80%;
+    margin-top: 15px;
+    margin-left: 60px;
+    background-color: rgba(255, 255, 255, 0.07);
+    /* backdrop-filter: blur(10px); */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    /* box-shadow: 0 0 40px rgba(8, 7, 16, 0.6); */
+    background: transparent;
+    overflow: auto;
+    height: 550px;
+    padding: 6px;
+    border-radius: 6px;
+  }
+ 
+  .labels {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+  }
+  .userdatainputs {
+    color: #e5e5e5;
+    background-color:rgba(255, 255, 255, 0.07);
+    margin: 10px 0px;
+    /* border: 1px solid #d4d9de; */
+   
+    width: 100%;
+    outline: none;
+    height: 33px;
+    border-radius: 5px;
+    padding: 18px 15px;
+    font-size: 16px;
+  }
+  #userdescription {
+    color: #e5e5e5;
+    background-color:rgba(255, 255, 255, 0.07);
+    resize: none;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: 600;
+    /* border: 1px solid #d4d9de; */
+    outline: none;
+    border-radius: 5px;
+  }
+  #updatedatabutton {
+    background-color: rgba(70, 70, 231, 0.567);
+    width: 30%;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    text-align: center;
+    border-radius: 10px;
+    padding: 7px;
+  }
+  .usernameanddetailsdiv {
+    width: 65%;
+  }
+  .editanddeletbtn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .follow{
+    color: white;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-block: 0.5rem;
+
+  }
+  

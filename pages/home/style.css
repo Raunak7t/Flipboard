@@ -1,0 +1,211 @@
+:root {
+  --card_width: 250px;
+  --row_increment: 10px;
+  --card_border_radius: 16px;
+  --card_small: 26;
+  --card_medium: 33;
+  --card_large: 45;
+  --primary-bgcolor: black;
+  --primary-text: white;
+}
+
+/* .light{
+    --primary-bgcolor :white;
+    --primary-text :black;
+
+} */
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 5px;
+  background-color: grey;
+}
+
+.pin_container {
+  margin: 0;
+  padding: 0;
+  width: 80vw;
+  position: absolute;
+  left: 58%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--card_width));
+  grid-auto-rows: var(--row_increment);
+  justify-content: center;
+  top: 10%;
+  /* background-color: red; */
+}
+
+h1 {
+  z-index: 9999;
+  color: var(--primary-text);
+}
+
+.card {
+  padding: 0;
+  margin: 15px 10px;
+  border-radius: var(--card_border_radius);
+  /* background-color: red; */
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card_small {
+  grid-row-end: span var(--card_small);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: start;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card_medium {
+  grid-row-end: span var(--card_medium);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: start;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  /* background-position:center;
+    background-size: cover; */
+  object-fit: cover;
+  object-position: center;
+}
+
+.card_large {
+  grid-row-end: span var(--card_large);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: start;
+}
+
+.username {
+  position: absolute;
+  left: 0;
+  top: -20%;
+  background: linear-gradient(to top, #0000, #000c);
+  padding: 7px;
+  color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all ease 0.2s;
+}
+.username img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+.card:hover .username {
+  top: 0;
+}
+.card:hover .reactions {
+  bottom: 0;
+}
+
+.reactions {
+  position: absolute;
+  left: 0;
+  bottom: -20%;
+  background: linear-gradient(to bottom, #0000, #000c);
+  padding: 10px;
+  color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all ease 0.2s;
+}
+.reactions > div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.reactions i {
+  font-size: 1.3rem;
+}
+.h1-1{
+  color: blue;
+  font-size: 40px;
+  font-weight: 500;
+  text-align: center;
+  margin-left: 50%;
+}
+
+/* 
+.hide {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  border-radius: 17px;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin: 10px 10px;
+  background-color: red;
+  color: white;
+  font-size: 15px;
+  border: none;
+  display: none;
+  opacity: 0;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.card:hover .hide {
+  opacity: 1;
+}
+
+.iconn {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 88%;
+  left: 70%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content:center;
+    align-items:center;
+    margin: 180px 10px;
+    display:flex;
+   
+}
+
+.iconn {
+  opacity: 0;
+}
+
+.card:hover .iconn {
+  opacity: 1;
+}
+
+.icon-2 {
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+*/
+/* .tex{
+    position: absolute;
+    font-size:30px;
+    left:35%;
+    top:35%;
+   opacity: 0.4;
+   display: none;
+} */
+
+/* .card:hover .tex{
+    display: block;
+} */

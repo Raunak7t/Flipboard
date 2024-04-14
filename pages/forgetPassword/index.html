@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="forget-1">
+        <div class="forget-2">
+          <h2>Forget Password</h2>
+        </div>
+        <div class="para">
+          <p class="paral">
+            Lost your Password? please enter your email address.You will recieve
+            a link to create new Password.
+          </p>
+        </div>
+        <div class="forget-3">
+          <fieldset>
+            <label for="s-email">
+              E-mail Address
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email Address"
+              />
+            </label>
+          </fieldset>
+          <p class="message"></p>
+          <div class="forget-4">
+            <button id="forgetbtn" onclick="reset()">
+              Request Password Reset
+            </button>
+          </div>
+          <div class="forget-5">
+            <span id="back" onclick="back()">Back to Login</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../../commonJs/firebase.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>

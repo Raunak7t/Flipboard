@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="#" type="image/x-icon">
+
+  <title> Profile Cards Design </title>
+  <link rel="stylesheet" href="people.css">
+  <link rel="stylesheet" href="../../commonCss/nav1.css">
+  <link rel="stylesheet" href="../../commonCss/mode1.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
+
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="action">
+      <div class="profile" onclick=" menuToggle()">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGU75F10hHYzumh3r2HkDve9wTh2GLZ57ENYSMl4G5SC3lKc_3ZuZmnzC-RfYJoxThvMA&usqp=CAU"
+          id="headerdp" />
+      </div>
+      <div class="menu1">
+        <ul class="ul-1">
+          <li class="li-1">
+            <img id="menudp"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGU75F10hHYzumh3r2HkDve9wTh2GLZ57ENYSMl4G5SC3lKc_3ZuZmnzC-RfYJoxThvMA&usqp=CAU"
+              class="profile" />&nbsp;&nbsp;&nbsp;
+            <div>
+              <p id="menuusername">User Name</p>
+            </div>
+          </li>
+
+          <li class="li-1">
+            <i class="ri-user-line icon-1"></i><a href="../profile1/">My Profile</a>
+          </li>
+          <!-- <li class="li-1">
+            <i class="ri-mail-line icon-1"></i><a href="../inbox/">Inbox</a>
+          </li>
+          <li class="li-1">
+            <i class="ri-settings-2-line icon-1"></i><a href="../about-us/">Setting</a>
+          </li>
+          <li class="li-1">
+            <i class="ri-question-line icon-1"></i><a href="../help/">Help</a>
+          </li> -->
+          <li class="li-1">
+            <i class="ri-logout-box-line icon-1"></i><a href="#" onclick="logout()">LogOut</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <header class="dark-mode" style="z-index: 10">
+      <input type="checkbox" id="toogle-mode" class="checkbox" />
+      <label class="up" for="toogle-mode">
+        <i class="fa fa-moon-o"></i>
+        <i class="fa fa-sun-o"></i>
+        <div class="circle"></div>
+      </label>
+    </header>
+  </div>
+  <!--nav-->
+  <div class="menu">
+    <ion-icon name="menu-outline"></ion-icon>
+    <ion-icon name="close-outline"></ion-icon>
+  </div>
+
+  <div class="barra-lateral">
+    <div>
+      <div class="nombre-pagina">
+        <ion-icon id="cloud" name="cloud-outline"></ion-icon>
+        <span>Apex</span>
+      </div>
+      <button class="boton">
+        <ion-icon name="add-outline"></ion-icon>
+        <span>Create new</span>
+      </button>
+    </div>
+
+    <nav class="navegacion">
+      <ul>
+        <li>
+          <a href="../home/">
+            <!-- <ion-icon name="mail-unread-outline"></ion-icon> -->
+            <ion-icon name="home-outline"></ion-icon>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="../search/">
+            <!-- <ion-icon name="star-outline"></ion-icon> -->
+            <ion-icon name="search-outline"></ion-icon>
+            <span>Search</span>
+          </a>
+        </li>
+        <li>
+          <a href="../createPost/">
+            <!-- <ion-icon name="paper-plane-outline"></ion-icon> -->
+            <ion-icon name="add-outline"></ion-icon>
+            <span>Create</span>
+          </a>
+        </li>
+        <li>
+          <a href="../people/" id="active">
+            <ion-icon name="people-outline"></ion-icon>
+            <!-- <i class="fa-regular fa-users"></i> -->
+            <span>People</span>
+          </a>
+        </li>
+        <li>
+          <a href="../profile1/">
+            <ion-icon name="bookmark-outline"></ion-icon>
+            <span>Profile</span>
+          </a>
+        </li>
+        <!-- <li>
+          <a href="#">
+            <ion-icon name="settings-outline"></ion-icon>
+            <span>Setting</span>
+          </a>
+        </li> -->
+        <li>
+          <a href="#" onclick="logout()">
+            <ion-icon name="trash-outline"></ion-icon>
+            <span>Logout</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div>
+      <div class="modo-oscuro">
+        <div class="switch"></div>
+      </div>
+
+      <div class="usuario"></div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container" id="all-users">
+      <h1>Loading..</h1>
+    </div>
+  </main>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <script src="../../commonJs/firebase.js"></script>
+  <script src="../../commonJs/mode.js"></script>
+  <script src="../../commonJs/nav.js"></script>
+  <script src="people.js"></script>
+  <script src="../../commonJs/signOut.js"></script>
+
+  <script>
+    function menuToggle() {
+      const toggleMenu = document.querySelector(".menu1");
+      toggleMenu.classList.toggle("active");
+    }
+  </script>
+  
+  
+</body>
+
+</html>

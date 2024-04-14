@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar</title>
+    <script src="https://kit.fontawesome.com/0b4039aefe.js"></script>
+    <script
+      src="https://kit.fontawesome.com/0b4039aefe.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="../../commonCss/mode1.css" />
+    <link rel="stylesheet" href="../../commonCss/nav1.css" />
+    <link rel="stylesheet" href="profile.css" />
+    <link rel="stylesheet" href="posts.css" />
+    <link rel="stylesheet" href="chat.css">
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+
+    <!--firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-storage.js"></script>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="action">
+        <div class="profile" onclick=" menuToggle()">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGU75F10hHYzumh3r2HkDve9wTh2GLZ57ENYSMl4G5SC3lKc_3ZuZmnzC-RfYJoxThvMA&usqp=CAU"
+            id="headerdp"
+          />
+        </div>
+        <div class="menu1">
+          <ul class="ul-1">
+            <li class="li-1">
+              <img
+                id="menudp"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGU75F10hHYzumh3r2HkDve9wTh2GLZ57ENYSMl4G5SC3lKc_3ZuZmnzC-RfYJoxThvMA&usqp=CAU"
+                class="profile"
+              />&nbsp;&nbsp;&nbsp;
+              <div>
+                <p id="menuusername">User Name</p>
+              </div>
+            </li>
+
+            <li class="li-1">
+              <i class="ri-user-line icon-1"></i
+              ><a href="../profile1/">My Profile</a>
+            </li>
+            <!-- <li class="li-1">
+              <i class="ri-mail-line icon-1"></i><a href="../inbox/">Inbox</a>
+            </li>
+            <li class="li-1">
+              <i class="ri-settings-2-line icon-1"></i
+              ><a href="../about-us">Setting</a>
+            </li>
+            <li class="li-1">
+              <i class="ri-question-line icon-1"></i><a href="../help/">Help</a>
+            </li> -->
+            <li class="li-1">
+              <i class="ri-logout-box-line icon-1"></i
+              ><a href="#" onclick="logout()">LogOut</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <header class="dark-mode" style="z-index: 10">
+        <input type="checkbox" id="toogle-mode" class="checkbox" />
+        <label class="up" for="toogle-mode">
+          <i class="fa fa-moon-o"></i>
+          <i class="fa fa-sun-o"></i>
+          <div class="circle"></div>
+        </label>
+      </header>
+    </div>
+    <!--nav-->
+    <div class="menu">
+      <ion-icon name="menu-outline"></ion-icon>
+      <ion-icon name="close-outline"></ion-icon>
+    </div>
+
+    <div class="barra-lateral">
+      <div>
+        <div class="nombre-pagina">
+          <ion-icon id="cloud" name="cloud-outline"></ion-icon>
+          <span>Apex</span>
+        </div>
+        <button class="boton">
+          <ion-icon name="add-outline"></ion-icon>
+          <span>Create new</span>
+        </button>
+      </div>
+
+      <nav class="navegacion">
+        <ul>
+          <li>
+            <a href="../home/">
+              <!-- <ion-icon name="mail-unread-outline"></ion-icon> -->
+              <ion-icon name="home-outline"></ion-icon>
+              <span>Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="../search/">
+              <!-- <ion-icon name="star-outline"></ion-icon> -->
+              <ion-icon name="search-outline"></ion-icon>
+              <span>Search</span>
+            </a>
+          </li>
+          <li>
+            <a href="../createPost/">
+              <!-- <ion-icon name="paper-plane-outline"></ion-icon> -->
+              <ion-icon name="add-outline"></ion-icon>
+              <span>Create</span>
+            </a>
+          </li>
+          <li>
+            <a href="../people/">
+              <ion-icon name="people-outline"></ion-icon>
+              <!-- <i class="fa-regular fa-users"></i> -->
+              <span>People</span>
+            </a>
+          </li>
+          <li>
+            <a id="active" href="../profile1/">
+              <ion-icon name="bookmark-outline"></ion-icon>
+              <span>Profile</span>
+            </a>
+          </li>
+          <!-- <li>
+            <a href="#">
+              <ion-icon name="settings-outline"></ion-icon>
+              <span>Setting</span>
+            </a>
+          </li> -->
+          <li>
+            <a href="#" onclick="logout()">
+              <ion-icon name="trash-outline"></ion-icon>
+              <span>Logout</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div>
+        <div class="modo-oscuro">
+          <div class="switch"></div>
+        </div>
+
+        <div class="usuario"></div>
+      </div>
+    </div>
+
+    <!---Profile design-->
+    <div class="card1">
+      <div class="left-container">
+        <div id="profilemain" class="col-12">
+          <div id="userdetails">
+            <div id="usercoverpicture">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtdtOhEhiJcmRb9v40mZ7mFbJC_HoeBM4v0w&s"
+                alt=""
+                id="usercoverimg"
+                class="col-12"
+              />
+              <label
+                for="inputforusercoverimg"
+                id="choosecoverimg"
+                class="uploadbuttons"
+              >
+                <img
+                  src="https://t4.ftcdn.net/jpg/02/17/88/73/360_F_217887350_mDfLv2ootQNeffWXT57VQr8OX7IvZKvB.jpg"
+                  id="m"
+                  width="40px"
+              /></label>
+              <input
+                type="file"
+                id="inputforusercoverimg"
+                style="visibility: hidden"
+                onchange="changecoverpicture(event)"
+              />
+              <div id="userprofilepicture">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGU75F10hHYzumh3r2HkDve9wTh2GLZ57ENYSMl4G5SC3lKc_3ZuZmnzC-RfYJoxThvMA&usqp=CAU"
+                  alt=""
+                  id="userprofileimg"
+                  class="col-4 largeprofilepicture"
+                />
+                <label
+                  for="inputforuserprofileimg"
+                  id="chooseprofileimg"
+                  class="uploadbuttons"
+                >
+                  <img
+                    src="https://t4.ftcdn.net/jpg/02/17/88/73/360_F_217887350_mDfLv2ootQNeffWXT57VQr8OX7IvZKvB.jpg"
+                    id="m"
+                    width="30px"
+                /></label>
+                <input
+                  type="file"
+                  id="inputforuserprofileimg"
+                  style="visibility: hidden"
+                  onchange="changeprofilepicture(event)"
+                />
+              </div>
+            </div>
+            <div class="progress" id="progressbardiv">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                id="progressbar"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <h2 class="gradienttext" id="right-name">loading...</h2>
+        <div class="follow">
+          <div id="following">loading...</div>
+          <div id="followers">loading...</div>
+        </div>
+        <br />
+        <div class="buttons">
+          <button id="btn-post">Post</button>
+          <button id="btn-update">Profile update</button>
+        </div>
+        
+        <!--chat-->
+        <div class="comments">
+          <!-- <h3><span id="comment-count"></span>Talk with us</h3> -->
+          <div class="comment-input">
+            <input type="text" placeholder="text here" />
+            <div class="send"><i class="ri-send-plane-fill"></i> Send</div>
+          </div>
+        </div><br><br><br>
+        <div class="comments-div">
+          <h2 onclick="expandComments()">messages received</h2>
+          <div class="cancel" onclick="expandComments()">
+            <i class="ri-close-fill"></i>
+          </div>
+          <div class="all-comments">
+            <div class="comment-card">
+              <h4 style="text-align: center">No Talks yet</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-container">
+        <div class="blocks">
+          <div class="postA" id="postA">
+            <h3 class="gradienttext">Post</h3>
+
+            <div class="pin_container">
+              <h1 class="">Loading...</h1>
+            </div>
+          </div>
+          <div class="updateB" id="updateB">
+            <h3 class="gradienttext">Profile Details</h3>
+            <div id="editabledatadiv">
+              <label for="firstname" class="labels"> Name:</label>
+              <input type="text" id="firstname" class="userdatainputs" />
+              <!-- <label for="lastname" class="labels">Last Name:</label>
+              <input type="text" id="lastname" class="userdatainputs"> -->
+              <label for="mobileno" class="labels">Mobile number:</label>
+              <input type="number" id="mobileno" class="userdatainputs" />
+              <label for="emailaddress" class="labels">Email Address:</label>
+              <input type="email" id="emailaddress" class="userdatainputs" />
+              <label for="userdescription" class="labels">Description:</label>
+              <textarea
+                id="userdescription"
+                rows="5"
+                placeholder="Description(Optinal)"
+                <style="color: #e5e5e5"
+              >
+              </textarea>
+
+              <p id="message"></p>
+              <div
+                class="col-12"
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-end;
+                  margin-top: 10px;
+                "
+              >
+                <button id="updatedatabutton" onclick="update()">Update</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script>
+      function menuToggle() {
+        const toggleMenu = document.querySelector(".menu1");
+        toggleMenu.classList.toggle("active");
+      }
+    </script>
+    <script src="../../commonJs/firebase.js"></script>
+    <script src="./profile.js"></script>
+    <script src="./posts.js"></script>
+    <script src="../../commonJs/nav.js"></script>
+    <script src="../../commonJs/mode.js"></script>
+    <script src="chat.js"></script>
+    <!-- <script src="extra.js"></script> -->
+
+    <!--logout-->
+    <script>
+      function logout() {
+        firebase.auth().signOut();
+      }
+      firebase.auth().onAuthStateChanged((user) => {
+        if (!user) {
+          location.href = "/index.html";
+        }
+      });
+    </script>
+
+    <script>
+      var btn_a = document.getElementById("btn-post");
+      var btn_b = document.getElementById("btn-update");
+      var postA = document.getElementById("postA");
+      var updateB = document.getElementById("updateB");
+
+      btn_a.addEventListener("click", () => {
+        postA.style.display = "block";
+        updateB.style.display = "none";
+      });
+      btn_b.addEventListener("click", () => {
+        postA.style.display = "none";
+        updateB.style.display = "block";
+      });
+    </script>
+  </body>
+</html>

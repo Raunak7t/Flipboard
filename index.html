@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./popup.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
+
+  <title>Document</title>
+</head>
+
+<body>
+  <header class="dark-mode" style="z-index: 10;">
+    <input type="checkbox" id="toogle-mode" class="checkbox" />
+    <label class="label" for="toogle-mode">
+      <i class="fa fa-moon-o"></i>
+      <i class="fa fa-sun-o"></i>
+      <div class="circle"></div>
+    </label>
+  </header>
+  <div class="container">
+    <div class="card">
+      <img
+        src="./assets/A1.jpg"
+        class="updown img1">
+      <img
+        src="./assets/A2.jpg"
+        class="updown img2">
+    </div>
+
+    <div class="card">
+      <img
+        src="./assets/B1.jpg"
+        class="updown img1">
+      <img src="./assets/B2.jpg"
+        class="updown img2">
+    </div>
+
+    <div class="card">
+      <img src="./assets/C1.jpg"
+        class="updown img1">
+      <img
+        src="./assets/C2.jpg"
+        class="updown img2">
+    </div>
+
+    <div class="card">
+      <img
+        src="./assets/D1.jpg"
+        class="updown img1">
+      <img src="./assets/D2.jpg"
+        class="updown img2">
+    </div>
+
+    <div class="card">
+      <img src="./assets/E1.jpg"
+        class="updown img1 ">
+      <img
+        src="./assets/E2.jpg"
+        class="updown img2">
+    </div>
+
+    <div class="card">
+      <img
+        src="./assets/F1.jpg"
+        class="updown img1">
+      <img
+        src="./assets/F2.jpg"
+        class="updown img2">
+    </div>
+  </div>
+  <section>
+    <h1 class="title">FLIPBOARD</h1>
+    <div class="center" style="z-index: 10;">
+      <button class="show-login Btn">Get Started</button>
+    </div>
+  </section>
+
+  <!--Login Box-->
+  <div class="form login-form" style="z-index: 10;">
+    <div class="closebtn">&times;</div>
+    <h2>Login</h2>
+    <div class="form-element">
+      <fieldset>
+        <label for="e-mail">
+          E-mail
+          <input type="email" name="email" id="email" placeholder="swati@gmail.com" />
+        </label>
+      </fieldset>
+      <fieldset>
+        <label for="password">
+          Password
+          <input type="password" name="password" id="s-password" placeholder="Password" />
+          <div toggle="#password-field" class="toggle-password">
+            <i class="off fa fa-eye"></i>
+            <i class="on hide fa fa-eye-slash"></i>
+          </div>
+        </label>
+      </fieldset>
+      <p id="messages"></p>
+      <h4 onclick="ForgetPassword()">Forget Password<h4>
+    </div>
+    <button onclick="Log()">Login</button>
+    <p>Don't have account?<span id="show-signup">Sign up</span></p>
+    <footer>
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-instagram"></i></a>
+    </footer>
+  </div>
+
+  <!---Signup box-->
+  <div class="form signup-form" style="z-index: 10;">
+    <div class="closebtn">&times;</div>
+    <h2>Sign up</h2>
+    <div class="form-element">
+      <fieldset>
+        <label for="Name">
+          Name
+          <input type="text" name="Name" id="name" placeholder="Name" />
+        </label>
+      </fieldset>
+      <fieldset>
+        <label for="s-email">
+          E-mail
+          <input type="email" name="email" id="E-email" placeholder="swati@gmail.com" />
+        </label>
+      </fieldset>
+      <fieldset>
+        <label for="s-password">
+          Password
+          <input type="password" name="password" id="password" placeholder="Password" />
+          <div toggle="#password-field" class="toogle-password">
+            <i class="off fa fa-eye"></i>
+            <i class="on hide fa fa-eye-slash"></i>
+          </div>
+        </label>
+      </fieldset>
+    </div>
+    <p id="message"></p>
+    <br />
+    <button onclick="signup()">Sign-up</button>
+    <p>Already have an account?<span class="show-login" onclick="login()">Log in</span></p>
+    <footer>
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-instagram"></i></a>
+    </footer>
+  </div>
+  <!-- <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+  <script src="./commonJs/firebase.js"></script>
+  <script src="./commonJs/mode.js"></script>
+  <script src="./commonJs/popup.js"></script>
+  <script src="./commonJs/register.js"></script>
+  <script src="./commonJs/login.js"></script>
+</body>
+</html>
+
